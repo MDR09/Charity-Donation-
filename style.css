@@ -131,6 +131,7 @@ header nav ul li a:hover {
 .dropdown-content {
     display: none; /* Hidden by default */
     position: absolute; /* Allows it to overlay */
+    right: 10px;
     background-color: rgba(0, 0, 0, 0.6); /* Background color of dropdown */
     align-items: center;
     min-width: 160px; /* Minimum width */
