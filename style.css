@@ -131,7 +131,6 @@ header nav ul li a:hover {
 .dropdown-content {
     display: none; /* Hidden by default */
     position: absolute; /* Allows it to overlay */
-    
     background-color: rgba(0, 0, 0, 0.6); /* Background color of dropdown */
     align-items: center;
     min-width: 160px; /* Minimum width */
@@ -666,16 +665,6 @@ footer .newsletterContainer input{
         margin: 5px 0; /* Space between bars */
     }
 
-    .dropdown-content {
-        display: none; /* Hidden by default */
-        position: absolute; /* Allows it to overlay */
-        right: 10px;
-        background-color: rgba(0, 0, 0, 0.6); /* Background color of dropdown */
-        align-items: center;
-        min-width: 160px; /* Minimum width */
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow effect */
-        z-index: 1; /* Ensure it appears above other content */
-    }
     
     /* Media query for responsive navigation */
     @media screen and (max-width: 768px) {
@@ -709,6 +698,8 @@ footer .newsletterContainer input{
             text-align: center; /* Center text in dropdown */
             line-height: 50px; /* Adjust line height */
         }
+
+        
     }
     .banner{
         background-position-x:65%;
@@ -767,5 +758,17 @@ footer .newsletterContainer input{
     }
     .banner h1{
         margin-top: 100px;
+    }
+}
+@media screen and (max-width: 1350px){
+    .dropdown-content {
+        display: none; /* Hidden by default */
+        position: absolute; /* Allows it to overlay */
+        right: 5px;
+        background-color: rgba(0, 0, 0, 0.6); /* Background color of dropdown */
+        align-items: center;
+        min-width: 160px; /* Minimum width */
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow effect */
+        z-index: 1; /* Ensure it appears above other content */
     }
 }

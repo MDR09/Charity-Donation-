@@ -43,7 +43,7 @@
                 <h2>Helpdesk</h2>
                 <p>For any grievance, suggestions and queries kindly write to us.</p>
 
-                <form action="#">
+                <form id="contact-form" onsubmit="return sendEmail()">
                     <label for="name">Name *</label>
                     <input type="text" id="name" name="name" required>
 
@@ -95,6 +95,12 @@
             </div>
         </footer>
     </div>
-    <script src="donate.js"></script>       
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function () {
+        emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+    })();
+    </script>
+    <script src="contact.js"></script>       
 </body>
 </html>
