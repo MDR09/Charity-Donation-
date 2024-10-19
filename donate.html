@@ -6,6 +6,8 @@
     <title>Start With A Little</title>
     <link rel="stylesheet" href="donate.css">
     <link rel="stylesheet" href="donate2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 </head>
 <body>
     <div class="fullContainer banner">
@@ -167,7 +169,7 @@
                         <button type="button" class="back-btn" onclick="goBack()">Back</button>
                         <button type="submit" class="submit-btn">Submit</button>
                     </div>
-                </form>
+                </form>   
             </div>                    
             <div class="otherWays">
                 <h1>Other Ways to Help</h1>
@@ -175,6 +177,12 @@
                     Not ready to donate? You can still make a big impact by sharing our mission on social media, 
                     volunteering your time, or getting involved in local initiatives.
                 </p>
+            </div>
+        </div>
+        <div id="qrCodeModal" class="qrmodal">
+            <div class="qrmodal-content">
+                <!-- <span class="close">&times;</span> -->
+                <div id="qrCodeContainer"></div>
             </div>
         </div>
         <footer>

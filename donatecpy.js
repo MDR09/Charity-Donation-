@@ -264,10 +264,10 @@ document.getElementById('formContainer').querySelector('form').addEventListener(
     };
 
     // Validate form fields
-    if (!formData.name || !formData.email || !formData.phone) {
-        alert('Please fill in all required fields.');
-        return;
-    }
+    // if (!formData.name || !formData.email || !formData.phone) {
+    //     alert('Please fill in all required fields.');
+    //     return;
+    // }
 
     // Save form data to Firebase
     set(ref(db, 'formSubmissions'), formData)
@@ -305,12 +305,49 @@ function saveDonationData() {
         .then(() => {
             alert('Donation data saved successfully!');
             // Optionally, you can redirect to a different page or reset the donation form here
+            generateUPIQRCode(amount);
         })
         .catch((error) => {
             console.error('Error saving donation data:', error);
             alert('There was an error saving the donation. Please try again.');
         });
 }
+
+// Function to generate UPI QR code
+function generateUPIQRCode(amount) {
+    const upiId = "8233660611@ptyes";  // Your UPI ID
+    const name = "Your Charity Name";  // Replace with your charity name
+    const upiURL = `upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
+
+    // Create or clear the QR code element inside the modal
+    const qrCodeContainer = document.getElementById('qrCodeContainer');
+    qrCodeContainer.innerHTML = ''; // Clear any previous QR code
+
+    // Generate the QR code using qrcode.js
+    new QRCode(qrCodeContainer, {
+        text: upiURL,
+        width: 200,
+        height: 200,
+    });
+
+    // Show the modal
+    const modal = document.getElementById('qrCodeModal');
+    modal.style.display = 'block';
+
+    // Add a close button listener
+    const closeModal = document.getElementsByClassName('close')[0];
+    closeModal.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    // Close modal if user clicks outside the modal content
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+}
+
 
 
 

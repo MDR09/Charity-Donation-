@@ -1,0 +1,208 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    min-height: 100vh; /* Ensure full viewport height */
+    padding: 0px;
+}
+
+/* Form Container */
+.form-container {
+    width: 100%; /* Full width */
+    max-width: 400px; /* Max width for large screens */
+    padding: 20px;
+    border: 2px solid #9cc06a; 
+    margin: 20px auto; /* Centering the form horizontally */
+    border-radius: 10px; 
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Header (Navigation Bar) */
+header {
+    width: 100%; /* Ensure header takes full width */
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    z-index: 10; /* Higher z-index to ensure visibility */
+}
+
+/* Remaining CSS code... (No changes needed for input fields, buttons, etc.) */
+
+
+/* Heading Styles */
+.form-container h2 {
+    text-align: center;
+    color: #83b841; /* Match heading color with donation box */
+    margin-bottom: 15px;
+    font-size: 24px; /* You may adjust font size as needed */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+}
+
+/* Input Row for grouping form fields */
+.input-row {
+    display: flex;
+    gap: 15px; /* Space between input fields */
+}
+
+/* Input Styles */
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="date"], 
+select {
+    width: 100%; /* Full width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    font-size: 14px;
+}
+
+/* Grouping Date of Birth field */
+.input-row .dob-group {
+    flex: 1; /* Allows the dob-group to flex */
+}
+
+.input-row input[type="text"],
+.input-row select {
+    flex: 1; /* Ensures equal distribution */
+}
+
+/* Small Label for Date of Birth */
+.dob-group label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Button Styles */
+.back-btn, .submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Back Button Styling */
+.back-btn {
+    background-color: white;
+    color: #83b841; /* Match the theme */
+    border: 2px solid #83b841; /* Match the theme */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Submit Button Styling */
+.submit-btn {
+    background-color: #83b841; /* Match the theme */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+/* Hover Effects */
+.back-btn:hover {
+    background-color: #83b841; /* Match hover state */
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #6fa934; /* Match hover state */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-container {
+        width: 100%;
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .input-row {
+        flex-direction: column; /* Stack inputs vertically on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 20px; /* Adjust font size for mobile */
+    }
+
+    input[type="text"], 
+    input[type="email"], 
+    input[type="tel"], 
+    input[type="date"], 
+    select {
+        font-size: 12px; /* Slightly reduce input font size */
+        padding: 8px; /* Adjust padding for mobile inputs */
+    }
+
+    .back-btn, .submit-btn {
+        padding: 8px 15px; /* Adjust button padding */
+        font-size: 12px; /* Reduce button font size */
+    }
+}
+
+.qrmodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    overflow: hidden; /* Disable scroll */
+}
+
+/* Modal Content */
+.qrmodal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from top and centered */
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Close Button (X) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: black;
+}
+
+/* QR Code Container */
+#qrCodeContainer {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
