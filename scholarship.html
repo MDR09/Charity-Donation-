@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give Scholarships to Children</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .scholarship-info {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .scholarship-info h2 {
+            color: #35424a;
+        }
+
+        .scholarship-info p {
+            line-height: 1.6;
+        }
+
+        .donation-form {
+            margin-top: 20px;
+            padding: 20px;
+            background: #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .donation-form input, .donation-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .donate-button {
+            display: inline-block;
+            padding: 15px 25px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 10px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .donate-button:hover {
+            background: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #35424a;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="title">Give Scholarships to Children</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="scholarship-info">
+            <h2>Empower Children's Futures</h2>
+            <p>
+                Education is a crucial stepping stone for children to achieve their dreams. By providing scholarships, you enable children from underprivileged backgrounds to access quality education and resources.
+                Your support can change lives and open doors to a brighter future for these children.
+            </p>
+            <p>
+                Join us in our mission to support children in need by contributing to their educational journey. Together, we can make a difference and invest in the future leaders of tomorrow.
+            </p>
+        </div>
+
+        <div class="donation-form">
+            <h3>Make a Donation</h3>
+            <form action="YOUR_BACKEND_URL" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="amount">Donation Amount:</label>
+                <input type="number" id="amount" name="amount" required min="1" step="0.01">
+
+                <label for="message">Message (optional):</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit" class="donate-button">Donate Now</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Charity NGO. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

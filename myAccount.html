@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" href="myAccount.css">
+    <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css">
+    <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
+
+
+</head>
+<body>
+    <div class="account-container">
+        <div class="account-header">
+            <h2>My Account</h2>
+        </div>
+        
+        <!-- Profile Photo Section with Placeholder -->
+        <div class="profile-photo" id="profilePlaceholder">
+            <img id="profileImage" src="default-profile.png" alt="Profile Photo" style="display: none;"> <!-- Hidden by default -->
+            <div id="profileInitials" style="display: none;"></div> <!-- Hidden by default -->
+        </div>
+                
+        <input type="file" id="uploadPhoto" class="upload-photo" accept="image/*" style="display: none;">
+        <button id="uploadPhotoBtn" class="upload-photo">Change Photo</button>
+        
+        <div class="account-details">
+            <div>
+                <label for="accountName">Name:</label>
+                <p id="accountName" class="editable">John Doe</p>
+            </div>
+            <div>
+                <label for="accountEmail">Email:</label>
+                <p id="accountEmail" class="editable">johndoe@example.com</p>
+            </div>
+        </div>
+        <div class="account-details">
+            <div>
+                <label for="accountRole">Role:</label>
+                <p id="accountRole">User</p>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="deleteAccountBtn" class="danger">Delete Account</button>
+        </div>
+    </div>
+    <script type="module" src="myAccount.js"></script>
+</body>
+</html>

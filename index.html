@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity-website</title>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js"></script>
+    <style>
+            .typed-cursor {
+            opacity: 0 !important; /* Completely hide the blinking cursor */
+
+        }
+    </style>
+</head>
+    
+</head>
+<link rel="stylesheet" href="style.css">
+<body class="no-transition">
+    <div class="fullContainer banner" id = "homeSection">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="logo.png" alt="Charity Logo" />
+                </div>
+                <nav>
+                    <div class="hamburger" id="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    
+                    <ul>
+                        <li>
+                            <a href="#homeSection">Home</a>
+                        </li>
+                        <li>
+                            <a href="#aboutSection">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#programSection">Programs</a>
+                        </li>
+                        <li>
+                            <a href="#educationSection">Education</a>
+                        </li>
+                        <!-- <li>
+                            <a href="#joinSection">Join Us</a>
+                        </li> -->
+                        <li>
+                            <a href="contact.html">Contact Us</a>
+                        </li>
+                        <li id="navLoginSignup">
+                            <button id="loginBtn">Login / Signup</button>
+                        </li>
+                        <!-- <li id="navMyDonation" style="display: none;">
+                            <a href="#myDonations">My Donations</a>
+                        </li>
+                        <li id="navAllDonations" style="display: none;">
+                            <a href="#allDonation">All Donations</a>
+                        </li>
+                        <li id="navLogout" style="display: none;">
+                            <button id="logoutBtn">Logout</button>
+                        </li> -->
+                        <!-- <li id="navMyDonation" style="display: none;"><a href="#">My Donations</a></li> -->
+                        
+                    </ul>
+                    <li id="navLogout" style="display: none;">
+                        <div class="circle-icon" id="userIcon"></div>
+                        <div class="dropdown-content" id="dropdownMenu">
+                            <a href="myaccount.html" id="myAccountLink">My Account</a>
+                            <a href="#" id="MyDonation">My Donations</a>
+                            <a href="#" id="logoutBtn">Logout</a>
+                            <!-- <a href="#" id="viewAllUsers" style="display: none;">All Users</a> -->
+                            <!-- <a href="#" id="viewAllDonations" style="display: none;">All Donations</a> -->
+                            
+                    </div>
+                    </li>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- The Modal -->
+        <div id="loginSignupModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <div id="loginForm">
+                    <h2>Login</h2>
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password">
+                    </div>
+                    <button id="submitLogin">Login</button>
+                    <!-- <button id="googleLoginBtn">Login with Google</button> -->
+                    <p>Don't have an account? <a href="#" id="signupLink">Sign up here</a></p>
+                </div>
+
+                <div id="signupForm" style="display: none;">
+                    <h2>Sign Up</h2>
+                    <div class="input-group">
+                        <label for="signupName">Name:</label>
+                        <input type="text" id="signupName" placeholder="Enter your name">
+                    </div>
+                    <div class="input-group">
+                        <label for="signupEmail">Email:</label>
+                        <input type="email" id="signupEmail" placeholder="Enter your email">
+                    </div>
+                    <div class="input-group">
+                        <label for="signupPassword">Password:</label>
+                        <input type="password" id="signupPassword" placeholder="Enter your password">
+                        
+                    </div>
+                    <!-- <div class="input-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="Password" id="confirmPassword" placeholder="Confirm password">
+                    </div> -->
+                    <button id="submitSignup">Sign Up</button>
+                    <p>Already have an account? <a href="#" id="loginLink">Login here</a></p>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="container">
+            <h1>Together We Can <br><span class="role"></span></h1>
+            <p>
+                Every small act of kindness, every donation, and every moment of bsupport has the power to make a lasting 
+                difference. By uniting our efforts, we can provide vital resources, care, and hope to those in need. 
+                Whether it's through funding 
+                medical treatment, offering shelter, or providing food and clean water, your contribution can be the 
+                lifeline someone 
+                desperately needs. Join us in this mission, because together, we can bring change, restore hope, and save 
+                lives.
+            </p>
+            <button id="startWithLittleBtn">Start With A Little</button>
+        </div>
+    </div>
+    <section class="fullContainer" id="aboutSection">
+        <div class="container">
+            <h2 class="sectionTitle">About Us</h2>
+            <p>
+                At NGO, we are driven by the belief that every person deserves access to basic necessities 
+                like food, clean water, healthcare, and education. Founded on the principles of compassion and 
+                community, we work tirelessly to provide support and resources to those facing hardship. Our programs 
+                are designed to not only address immediate needs but also empower individuals and families for long- 
+                term change. From disaster relief to educational scholarships, we focus on sustainable solutions that 
+                uplift communities. Together, with the support of volunteers, donors, and partners, we are making a 
+                tangible difference in the lives of those in need.
+            </p>
+            <div class="cards">
+                <div class="donationBox">
+                    <div class="title">Give Donation</div>
+                    <p>
+                        Your Contribution Can Change Lives
+                        A small donation can provide critical resources such as food, clean water, and medical care to  
+                        those in need. Every contribution helps us extend our mission of compassion and support. Your 
+                        generosity can be the turning point for someone in need.
+                        Donate Now and make a lasting impact.
+                    </p>
+                    <button class="donateNowBtn">Donate Now</button>
+                </div>
+                <div class="volunteerBox">
+                    <div class="title">Become a Volunteer</div>
+                    <p>
+                        Join Us in Making a Difference Volunteering is more than giving your time—it's about giving hope. 
+                        Help us in delivering aid, organizing events, and spreading awareness. Together, we can reach 
+                        more lives and make a greater impact.
+                        Become a Volunteer today and be part of something meaningful.
+                    </p>
+                    <button class="becomeNowBtn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf4r5zl1rFgWbTNmTIQz77JuusjBDsRwirGngHsQEuJEntKWQ/viewform?usp=sf_link', '_blank');">Become Now</button>
+                </div>
+                <div class="scholarshipBox">
+                    <div class="title">Give Scholarship</div>
+                    <p>
+                        Empower the Next Generation
+                        Education is a powerful tool to break the cycle of poverty. By providing scholarships, you help  
+                        bright young minds achieve their dreams and create a better future for themselves and their     
+                        communities.
+                        Give a Scholarship and invest in the leaders of tomorrow.
+                    </p>
+                    <button>
+                       Give Immediate
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="program" id="programSection">
+        <div class="container">
+            <h2 class="sectionTitle">Programs</h2>
+            <div class="boxContainer">
+                <div class="box">
+                    <div class="cardImage"></div>
+                    <div class="programTitle">Education to every Child</div>
+                    <div class="donationCount">
+                        Donation Goal : <span>1Cr</span>
+                    </div>
+                    <button class="donateNowBtn">Donate Now</button>
+                </div>
+                <div class="box">
+                    <div class="cardImage"></div>
+                    <div class="programTitle">Make Life Easier For Them</div>
+                    <div class="donationCount">
+                        Donation Goal : <span>1Cr</span>
+                    </div>
+                    <button class="donateNowBtn">Donate Now</button>
+                </div>
+                <div class="box">
+                    <div class="cardImage"></div>
+                    <div class="programTitle">Dedicating to helping kids</div>
+                    <div class="donationCount">
+                        Donation Goal : <span>1Cr</span>
+                    </div>
+                    <button class="donateNowBtn">Donate Now</button>
+                </div>
+                <div class="box">
+                    <div class="cardImage"></div>
+                    <div class="programTitle">Clean Water for People</div>
+                    <div class="donationCount">
+                        Donation Goal : <span>1Cr</span>
+                    </div>
+                    <button class="donateNowBtn">Donate Now</button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <section class="education" id="educationSection">
+        <video autoplay muted loop class="videoPlayer">
+            <source src="video/childrens.mp4" type="video/mp4" />
+            your browser does not support video 
+        </video>
+        <div class="container">
+            <div class="sectionTitle">Education</div>
+            <div class="educationContainer">
+                <h3>
+                    Education Is Essential For <br/>
+                    <strong> BETTER FUTUTE </strong>
+                </h3>
+                <p>
+                    Education is the key to breaking the cycle of poverty and empowering individuals to shape their own 
+                    futures. At NGO, we believe that every child and young adult deserves the opportunity to 
+                    learn, grow, and succeed, regardless of their background. Our education programs focus on providing 
+                    scholarships, school supplies, and learning resources to underserved communities. We partner with 
+                    local schools and educators to ensure students have access to quality education and a supportive 
+                    environment. By investing in education today, we are helping to build a brighter tomorrow for 
+                    individuals, families, and entire communities.
+                </p>
+                <button>Explore Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="join" id="joinSection">
+        <div class="container">
+            <div class="joinTitle">
+                Adopt A Child & <span>SAVE LIVES</span>
+            </div>
+            <p>
+                By joining our mission, you can make a real difference in the lives of children and families in need. 
+                Whether you choose to volunteer your time, donate resources, or adopt a child, your contribution helps us 
+                provide essential care, education, and hope. Together, we can create lasting change, offer brighter 
+                futures, and save lives. Join us today, and be part of a community that believes in compassion, unity, 
+                and the power of giving. Together, we can build a better tomorrow for those who need it the most.
+            </p>
+            <button class="joinNow" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf4r5zl1rFgWbTNmTIQz77JuusjBDsRwirGngHsQEuJEntKWQ/viewform?usp=sf_link', '_blank');">Join Now</button>
+            <button class="adoptBtn" onclick="window.open('https://cara.wcd.gov.in/')">ADOPT A CHILD</button>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="newsletterContainer">
+                <img src="logo.png" alt="">
+                <p>
+                    Stay informed and get involved! Subscribe to our newsletter to receive updates on our latest 
+                    programs, success stories, and opportunities to make a difference. By signing up, you’ll be the first 
+                    to know about our upcoming events, volunteer initiatives, and ways to contribute to our mission of 
+                    helping those in need. Together, we can create lasting change, one step at a time. Join our community 
+                    today!
+                </p>
+                <input type="text" placeholder="Enter Your Email id"/>
+            </div>
+            <div class="linksContainer">
+                <div class="title">Useful Links</div>
+                <ul>
+                    <li>
+                        <a href="#homeSection">Home</a>
+                    </li>
+                    <li>
+                        <a href="#aboutSection">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#programSection">Programs</a>
+                    </li>
+                    <li>
+                        <a href="#educationSection">Education</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="connectContainer">
+                <div class="title">Connect With Us</div>
+                <p>
+                    Malaviya National Institute of Technology Jaipur (MNIT) <br>
+                    302017, Jaipur
+                </p>
+                <p>info@ngo.com</p>
+                <p>+91 9079606662</p>
+            </div>
+        </div>
+    </footer>
+    <!-- <script type="module">
+        // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBGMUO9YFJnO-F6QhtqJyisDZleHQvgygY",
+            authDomain: "charity-78b81.firebaseapp.com",
+            projectId: "charity-78b81",
+            storageBucket: "charity-78b81.appspot.com",
+            messagingSenderId: "351871288311",
+            appId: "1:351871288311:web:057d6d5a4575d67ba524f2",
+            measurementId: "G-2TM815MBN5"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        // Reference to Firebase Database
+        const db = getDatabase(app);
+
+        // Add event listener for Sign Up button
+        document.getElementById('submitSignup').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Get the values from the signup form
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+
+            // Validate if fields are not empty
+            if (name === "" || email === "" || password === "") {
+                alert("All fields are required!");
+                return;
+            }
+
+            // Store the signup details in Firebase Realtime Database
+            set(ref(db, 'users/' + name), {
+                username: name,
+                email: email,
+                password: password
+            }).then(() => {
+                alert('Sign up successful!');
+            }).catch((error) => {
+                alert('Error: ' + error.message);
+            });
+        });
+    </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typeData = new Typed(".role", {
+          strings: [
+            "Save Lives",
+            "Make A Difference",
+            "Change The World",
+            
+          ],
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 80,
+          backDelay: 1000,
+          showCursor: false,
+        });
+      </script>
+    <script type="module" src="homecpy.js"></script>
+</body>
+</html>

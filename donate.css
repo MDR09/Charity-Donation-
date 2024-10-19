@@ -1,0 +1,397 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    user-select: none;
+}
+
+.fullContainer {
+    width: 100%;
+}
+
+.container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Vertically center items */
+    width: 90%; /* Full width minus margin */
+    margin: 0 auto; /* Center the container */
+}
+.container2 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: #fff;
+    margin: 0 0;
+    
+}
+
+.banner p {
+    color: #fff;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* Header and Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    max-width: 200px;
+    margin-right: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+nav ul li {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+nav ul li a {
+    margin: 0;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #83b841;
+}
+
+nav ul li a:hover {
+    background-color: #6fa934;
+    transition: 0.3s;
+}
+
+/* Banner Section */
+.banner {
+    width: 100%;
+    position: relative;
+    /* background-image: url(donateBanner.jpg); */
+    background-size: cover; /* Ensures the image covers the entire banner area */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    overflow: hidden;
+}
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(donateBanner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%); /* Applies grayscale filter */
+    z-index: -1; /* Ensures the background stays behind the content */
+}
+
+/* Start With A Little Page */
+/* Donation Box Styles */
+.donationOptions {
+    border: 2px solid #9cc06a;
+    padding: 20px;
+    text-align: center;
+    max-width: 390px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease; /* Added transition for scaling effect */
+}
+
+.donationOptions:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+.donationOptions h2 {
+    color: #83b841;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.cta-text {
+    background-color: #83b841;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease; /* Transition for background color change */
+}
+
+.cta-text:hover {
+    background-color: #6fa934; /* Change color on hover */
+}
+
+.donation-amounts label {
+    display: inline-block;
+    margin: 10px;
+    font-size: 16px;
+    transition: color 0.3s ease; /* Transition for label color change */
+}
+
+.donation-amounts input {
+    margin-right: 5px;
+}
+
+.donation-info {
+    font-size: 14px;
+    color: #555;
+    margin: 15px 0;
+}
+
+.custom-amount input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Ensures padding does not affect the width */
+    transition: border-color 0.3s ease; /* Transition for border color change */
+}
+
+.custom-amount input:focus {
+    border-color: #83b841; /* Change border color on focus */
+}
+
+.donate-button {
+    background-color: #83b841;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Ensure button spans the entire width */
+    box-sizing: border-box; /* Prevents padding from affecting width */
+    transition: background-color 0.3s ease; /* Transition for button background color */
+}
+
+.donate-button:hover {
+    background-color: #6fa934; /* Change color on hover */
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 100px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Login/Signup Form styles */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-content a {
+    color: #007bff;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #181818;
+    color: #7f7f7f;
+    padding: 43px 0;
+    font-size: 14px;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+}
+
+footer .title {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid;
+    margin-bottom: 30px;
+    padding: 0 0 5px 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer .linksContainer ul {
+    list-style-type: none;
+}
+
+footer .linksContainer ul li a {
+    text-decoration: none;
+    color: #7f7f7f;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+footer .newsletterContainer img {
+    height: 40px;
+    margin-bottom: 11px;
+}
+
+footer .newsletterContainer input {
+    background-color: transparent;
+    border: 1px solid #7f7f7f;
+    outline: none;
+    padding: 10px 5px;
+    width: 100%;
+    margin-top: 10px;
+    color: #ccc;
+    border-radius: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .container {
+        grid-template-columns: 1fr;
+    }
+
+    .donationOptions {
+        width: 100%; /* Make it fully responsive */
+        max-width: none; /* Remove max width on smaller screens */
+        padding: 20px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .donate-button, .cta-text {
+        font-size: 14px;
+        padding: 10px; /* Adjust padding for buttons on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 1.2em;
+    }
+
+    .donationOptions {
+        padding: 15px;
+    }
+
+    .donate-button, .cta-text {
+        font-size: 12px; /* Reduce font size for very small screens */
+        padding: 8px 10px;
+    }
+}
+
+
+
+
+
+
+
+

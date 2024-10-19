@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Website</title>
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" href="volunteer.css"> <!-- New stylesheet for volunteer entry -->
+</head>
+<body>
+    <div class="fullContainer banner" id="homeSection">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="logo.png" alt="Charity Logo" />
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#homeSection">Home</a></li>
+                        <li><a href="#aboutSection">About Us</a></li>
+                        <li><a href="#programSection">Programs</a></li>
+                        <li><a href="#educationSection">Education</a></li>
+                        <li><a href="#joinSection">Join Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    
+        <div class="container">
+            <h1>Together We Can <span>Save Lives</span></h1>
+            <div class="volunteerEntryBox">
+                <h2>Become a Volunteer</h2>
+                <form id="volunteerSignupForm">
+                    <input type="text" placeholder="Your Name" required />
+                    <input type="email" placeholder="Your Email" required />
+                    <input type="text" placeholder="Your Skills/Interests" required />
+                    <textarea placeholder="Tell us why you want to volunteer" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional sections omitted for brevity -->
+    
+    <footer>
+        <div class="container">
+            <div class="newsletterContainer">
+                <img src="logo.png" alt="">
+                <p>
+                    Stay informed and get involved! Subscribe to our newsletter to receive updates on our latest programs, success stories, and opportunities to make a difference.
+                </p>
+                <input type="text" placeholder="Enter Your Email id"/>
+            </div>
+            <div class="linksContainer">
+                <div class="title">Useful Links</div>
+                <ul>
+                    <li><a href="#homeSection">Home</a></li>
+                    <li><a href="#aboutSection">About Us</a></li>
+                    <li><a href="#programSection">Programs</a></li>
+                    <li><a href="#educationSection">Education</a></li>
+                    <li><a href="#joinSection">Join Us</a></li>
+                </ul>
+            </div>
+            <div class="connectContainer">
+                <div class="title">Connect With Us</div>
+                <p>Malaviya National Institute of Technology Jaipur (MNIT) <br>302017, Jaipur</p>
+                <p>info@ngo.com</p>
+                <p>+91 9079606662</p>
+            </div>
+        </div>
+    </footer>
+    <script src="home.js"></script> <!-- Include the same JS file -->
+</body>
+</html>

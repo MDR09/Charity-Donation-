@@ -1,0 +1,287 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #f4f4f4;
+    user-select: none;
+}
+
+.fullContainer {
+    width: 100%;
+}
+
+.container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Vertically center items */
+    width: 90%; /* Full width minus margin */
+    margin: 0 auto; /* Center the container */
+}
+
+.container2 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: #fff;
+    margin: 0 0;
+}
+
+.banner p {
+    color: #fff;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* Header and Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    max-width: 200px;
+    margin-right: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+nav ul li {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+nav ul li a {
+    margin: 0;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #83b841;
+}
+
+nav ul li a:hover {
+    background-color: #6fa934;
+    transition: 0.3s;
+}
+
+/* Banner Section */
+.banner {
+    width: 100%;
+    position: relative;
+    background-size: cover; /* Ensures the image covers the entire banner area */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url(donateBanner.jpg); */
+    background-color: #181818;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%); /* Applies grayscale filter */
+    z-index: -1; /* Ensures the background stays behind the content */
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow columns to stack on smaller screens */
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.left-column, .right-column {
+    width: 45%; /* Adjust width for larger screens */
+    min-width: 250px; /* Ensures columns don't get too narrow */
+}
+
+.left-column h2, .right-column h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.left-column p, .right-column p {
+    margin-bottom: 10px;
+}
+
+.left-column h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.right-column form {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-column form label {
+    margin-bottom: 5px;
+}
+
+.right-column form input, .right-column form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.right-column form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.right-column .captcha {
+    margin-bottom: 20px;
+}
+
+.right-column button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.right-column button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    background-color: #181818;
+    color: #7f7f7f;
+    padding: 43px 0;
+    font-size: 14px;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+}
+
+footer .title {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid;
+    margin-bottom: 30px;
+    padding: 0 0 5px 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer .linksContainer ul {
+    list-style-type: none;
+}
+
+footer .linksContainer ul li a {
+    text-decoration: none;
+    color: #7f7f7f;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+footer .newsletterContainer img {
+    height: 40px;
+    margin-bottom: 11px;
+}
+
+footer .newsletterContainer input {
+    background-color: transparent;
+    border: 1px solid #7f7f7f;
+    outline: none;
+    padding: 10px 5px;
+    width: 100%;
+    margin-top: 10px;
+    color: #ccc;
+    border-radius: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-section {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .left-column, .right-column {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Space between columns */
+    }
+
+    footer .container {
+        grid-template-columns: 1fr;
+    }
+
+    .donationOptions {
+        width: 100%; /* Make it fully responsive */
+        max-width: none; /* Remove max width on smaller screens */
+        padding: 20px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .donate-button, .cta-text {
+        font-size: 14px;
+        padding: 10px; /* Adjust padding for buttons on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 1.2em;
+    }
+
+    .donationOptions {
+        padding: 15px;
+    }
+
+    .donate-button, .cta-text {
+        font-size: 12px; /* Reduce font size for very small screens */
+        padding: 8px 10px;
+    }
+
+    footer .title {
+        font-size: 18px; /* Smaller footer title on small screens */
+    }
+
+    footer p {
+        font-size: 12px; /* Adjust footer paragraph font size */
+    }
+
+    .right-column form input, .right-column form textarea {
+        font-size: 14px; /* Adjust form input sizes */
+    }
+}
